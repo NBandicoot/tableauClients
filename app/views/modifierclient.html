@@ -1,0 +1,48 @@
+<div ng-controller="ModifierclientCtrl">
+  <h1>Modifier le client</h1>
+  <form name="form" class="css-form" novalidate>
+    <label>Client :
+      <input type="text" ng-model="user.name" name="cName" required="" />
+    </label>
+    <br />
+    <div ng-show="form.$submitted || form.cName.$touched">
+      <div ng-show="form.cName.$error.required">Entrez le nom du client</div>
+    </div>
+
+    <label>Adresse de livraison :
+      <input type="text" ng-model="user.deliveryaddress" name="cDeliveryAddress" required="" />
+    </label>
+    <br />
+    <div ng-show="form.$submitted || form.cDeliveryAddress.$touched">
+      <div ng-show="form.cDeliveryAddress.$error.required">Entrez son adresse de livraison</div>
+    </div>
+
+    <label>Adresse de facturation :
+      <input type="text" ng-model="user.billingaddress" name="cBillingAddress" required="" />
+    </label>
+    <br />
+    <div ng-show="form.$submitted || form.cBillingAddress.$touched">
+      <div ng-show="form.cBillingAddress.$error.required">Entrez son adresse de facturation</div>
+    </div>
+
+    <label>Téléphone :
+      <input type="text" ng-model="user.phone" name="cPhone" required="" />
+    </label>
+    <br />
+    <div ng-show="form.$submitted || form.cPhone.$touched">
+      <div ng-show="form.cPhone.$error.required">Entrez le numéro de téléphone</div>
+    </div>
+
+    <label>E-mail :
+      <input type="email" ng-model="user.email" name="cEmail" required="" />
+    </label>
+    <br />
+    <div ng-show="form.$submitted || form.cEmail.$touched">
+      <span ng-show="form.cEmail.$error.required">Entrez l'email</span>
+      <span ng-show="form.cEmail.$error.email">L'email n'est pas valide</span>
+    </div>
+
+    <button class="btn btn-success" type="submit" ng-click="edit(c,client.indexOf(c))">Valider les modifications du client</button>
+    <!--<button class="btn btn-warning" type="reset" ng-click="reset(user)">Réinitialiser</button>-->
+  </form>
+</div>

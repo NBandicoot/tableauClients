@@ -1,0 +1,34 @@
+<div ng-controller="AjouterclientCtrl">
+  <h1>Nouveau client</h1>
+  <form name="form" class="css-form" novalidate>
+    <label>Client :
+      <input type="text" ng-model="client" required="" />
+    </label>
+    <br />
+    <label>Adresse de livraison :
+      <input type="text" ng-model="deliveryAddress" required="" />
+    </label>
+    <br />
+
+
+    <label>Adresse de facturation :
+      <input type="text" ng-model="billingAddress" required="" />
+    </label>
+    <br />
+
+
+    <label>Téléphone :
+      <input type="text" ng-model="phone" required="" />
+    </label>
+    <br />
+
+
+    <label>E-mail :
+      <input type="email" ng-model="email" required="" />
+    </label>
+    <br />
+
+    <button class="btn btn-success" type="submit" ng-click="btnadd()">Enregistrer le nouveau client</button>
+
+  </form>
+</div>

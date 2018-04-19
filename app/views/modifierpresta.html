@@ -1,0 +1,47 @@
+<div ng-controller="ModifierprestaCtrl">
+  <h1>Modifier la prestation</h1>
+  <form name="form" class="css-form" novalidate>
+    <label>Client :
+      <input type="text" ng-model="presta.name" name="pClient" required="" />
+    </label>
+    <br />
+    <div ng-show="form.$submitted || form.pClient.$touched">
+      <div ng-show="form.pClient.$error.required">Entrez le nom du client prestataire</div>
+    </div>
+
+    <label>Date de début :
+      <input type="text" ng-model="presta.deliveryadress" name="pStartDate" required="" />
+    </label>
+    <br />
+    <div ng-show="form.$submitted || form.pStartDate.$touched">
+      <div ng-show="form.pStartDate.$error.required">Entrez la date de début de la prestation</div>
+    </div>
+
+    <label>Date de fin :
+      <input type="text" ng-model="presta.billingaddress" name="pEndDate" required="" />
+    </label>
+    <br />
+    <div ng-show="form.$submitted || form.pEndDate.$touched">
+      <div ng-show="form.pEndDate.$error.required">Entrez la date de fin de la prestation</div>
+    </div>
+
+    <label>Nombre de Jomos :
+      <input type="text" ng-model="presta.phone" name="pNbJomos" required="" />
+    </label>
+    <br />
+    <div ng-show="form.$submitted || form.pNbJomos.$touched">
+      <div ng-show="form.pNbJomos.$error.required">Entrez le nombre de Jomos necessaires</div>
+    </div>
+
+    <label>Date d'expédition :
+      <input type="email" ng-model="presta.email" name="pSendDate" required="" />
+    </label>
+    <br />
+    <div ng-show="form.$submitted || form.pSendDate.$touched">
+      <span ng-show="form.SendDate.$error.required">Entrez la date d'envoi des Jomos</span>
+    </div>
+
+    <button class="btn btn-success" type="submit" ng-click="update(user)">Enregistrer le nouveau client</button>
+    <button class="btn btn-warning" type="reset" ng-click="reset(user)">Réinitialiser</button>
+  </form>
+</div>

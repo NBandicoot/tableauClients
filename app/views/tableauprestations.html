@@ -1,0 +1,32 @@
+<div ng-app="tableauClientsApp" ng-controller="TableauPrestationsCtrl as tp" class="">
+  <a href="#!/ajouterPresta"><button type="button" class="btn btn-success">Ajouter une prestation</button></a>
+  <br>
+  <br>
+  <table class="table table-bordered table-striped table-responsive col-lg-offset-1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th><a ng-href="#!/listeClients">Client</a></th>
+        <th>Date début</th>
+        <th>Date fin</th>
+        <th>Nombre de Jomos</th>
+        <th>Date expédition</th>
+        <th>Modifier prestation</th>
+        <th>Supprimer prestation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="p in tp.data">
+        <td>{{p.id}}</td>
+        <td><a ng-href="#!/infoClient" ng-click="show(c,client.indexOf(c))">{{p.client}}</a></td>
+        <td>{{p.dateDebut}}</td>
+        <td>{{p.dateFin}}</td>
+        <td>{{p.nbJomos}}</td>
+        <td>{{p.dateExpedition}}</td>
+        <td> <a ng-href="#!/modifierPresta"><button type="button" ng-click="edit(presta.indexOf(p))" class="btn btn-warning glyphicon glyphicon-pencil"></button></a></td>
+        <td><a ng-href="#!/supprimerPresta"><button type="button" ng-click="del(presta.indexOf(p))" class="btn btn-danger glyphicon glyphicon-remove"></button></a></td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="#!/ajouterPresta"><button type="button" class="btn btn-success">Ajouter une prestation</button></a>
+</div>

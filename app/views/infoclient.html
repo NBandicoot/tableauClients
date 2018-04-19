@@ -1,0 +1,13 @@
+<div ng-controller="InfoclientCtrl">
+  <h1>Infos du client</h1>
+  <table>
+    <tbody ng-repeat="c in client">
+      <tr>
+        <td ng-bind="c.name"></td>
+        <td ng-bind="c.deliveryAddress"></td>
+        <td ng-bind="c.billingAddress"></td>
+        <td ng-bind="c.phone"></td>
+        <td ng-bind="c.email"></td>
+      </tr>
+  </table>
+  <a href="#!/modifierClient"><button class="btn btn-success" ng-click="edit(c,client.indexOf(c))" type="button">Modifier la fiche info client</button></a>
